@@ -29,7 +29,24 @@ public class GuideMapper implements Mapper<Guide, GuideDTO> {
     }
 
     public GuideDTO toDto(Guide guide) {
-        return entityMapper.toTarget(guide, GuideDTO.class);
+        GuideDTO guideDTO = new GuideDTO();
+        guideDTO.setId(guide.getId());
+        guideDTO.setSequence(guide.getSequence());
+        guideDTO.setGuideSequence(guide.getGuideSequence());
+        guideDTO.setPam(guide.getPam());
+        guideDTO.setChr(guide.getChr());
+        guideDTO.setStart(guide.getStart());
+        guideDTO.setStop(guide.getStop());
+        guideDTO.setStrand(guide.getStrand());
+        guideDTO.setGenomeBuild(guide.getGenomeBuild());
+        guideDTO.setGrnaConcentration(guide.getGrnaConcentration());
+        guideDTO.setTruncatedGuide(guide.getTruncatedGuide());
+        guideDTO.setReversed(guide.getReversed());
+        guideDTO.setSangerService(guide.getSangerService());
+        guideDTO.setFormatName(guide.getGuideSequence());
+        guideDTO.setSourceName(guide.getGuideSequence());
+        guideDTO.setGid(guide.getGid());
+        return guideDTO;
     }
 
     public List<GuideDTO> toDtos(Collection<Guide> guides) {
